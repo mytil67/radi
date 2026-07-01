@@ -1,0 +1,168 @@
+================================================================================
+                    INSTRUCTIONS POUR PERSONNALISER RADI
+================================================================================
+
+Pour donner une apparence unique à ton compagnon RADI, remplaces le fichier
+'radi.png' dans ce dossier par une image personnalisée.
+
+--------------------------------------------------------------------------------
+                            RECOMMANDATIONS
+--------------------------------------------------------------------------------
+
+📐 TAILLE :
+   - Idéale : 150x150 pixels (pour une bonne qualité à l'écran)
+   - Minimum : 100x100 pixels
+   - Maximum : 300x300 pixels (sinon ajustez le code dans radi.py)
+
+🎨 FORMAT :
+   - PNG recommandé (pour la transparence)
+   - JPG ou GIF acceptés (mais sans transparence)
+
+🎭 STYLE :
+   Voici quelques idées pour t'inspirer :
+   
+   1. 🤖 ROBOT
+      - Un petit robot mignon avec des yeux expressifs
+      - Style rétro (pixel art) ou moderne
+      - Couleurs vives pour attirer l'attention
+   
+   2. 🦉 ANIMAL
+      - Un hibou (symbole de sagesse)
+      - Un renard (malin et rapide)
+      - Un chat ou un chien (familier)
+      - Un dragon ou une licorne (fantaisie)
+   
+   3. 🧙 PERSONNAGE
+      - Un magicien avec une baguette
+      - Un explorateur avec une loupe
+      - Un super-héros du numérique
+   
+   4. 💡 ABSTRAIT
+      - Une ampoule (pour les idées)
+      - Un cœur (pour la bienveillance)
+      - Un bouclier (pour la sécurité)
+
+--------------------------------------------------------------------------------
+                          OUTILS POUR CRÉER L'IMAGE
+--------------------------------------------------------------------------------
+
+🖌️ GRATUITS :
+   - Paint (Windows) : Simple et déjà installé
+   - GIMP : Puissant et gratuit (https://www.gimp.org/)
+   - Paint.NET : Léger et intuitif (https://www.getpaint.net/)
+   - Canva : En ligne, avec des modèles (https://www.canva.com/)
+
+🎨 PAYANTS (essai gratuit) :
+   - Adobe Photoshop
+   - Aseprite (parfait pour le pixel art)
+
+📱 MOBILE :
+   - PicsArt
+   - Adobe Photoshop Express
+   - Ibis Paint X
+
+--------------------------------------------------------------------------------
+                          EXEMPLES DE DESIGN
+--------------------------------------------------------------------------------
+
+ASCII ART (pour t'inspirer) :
+
+   Option 1 - Robot :        Option 2 - Hibou :
+
+      [=======]                (  .  .  )
+     /         \               (   __   )
+    |   O O   |              /--(  (  )--\ 
+    |    ∆    |             /    )  (    \
+     \  ___  /               /___(    )___\
+      '-----'
+
+   Option 3 - Émoji :        Option 4 - Bouclier :
+
+      🤖                      /~~~~\ 
+                            |  RADI |
+                            \~~~~/
+
+--------------------------------------------------------------------------------
+                          CONSEILS POUR UN BON RÉSULTAT
+--------------------------------------------------------------------------------
+
+✅ À FAIRE :
+   - Utilise un fond TRANSPARENT (PNG) pour que l'image s'intègre bien
+   - Garde un style simple et lisible (même en petit)
+   - Utilise des couleurs contrastées pour le texte du conseil
+   - Teste ton image en l'affichant en 150x150 pixels
+
+❌ À ÉVITER :
+   - Trop de détails (illisible en petit)
+   - Des couleurs trop claires (difficile à voir sur fond blanc)
+   - Un fond non transparent (carré blanc autour de l'image)
+
+--------------------------------------------------------------------------------
+                          TESTER TON IMAGE
+--------------------------------------------------------------------------------
+
+1. Place ton fichier 'radi.png' dans ce dossier (assets/)
+2. Lance le script : python radi.py
+3. Vérifie que l'image s'affiche correctement
+
+Si l'image ne s'affiche pas :
+   - Vérifie le nom du fichier (radi.png, pas Radi.PNG)
+   - Vérifie que c'est bien un PNG valide
+   - Essaie avec une image plus simple
+
+--------------------------------------------------------------------------------
+                          CRÉER UNE IMAGE DEPUIS ZÉRO
+--------------------------------------------------------------------------------
+
+Si tu veux créer une image simple en code, tu peux utiliser ce script Python
+(à exécuter une fois pour générer radi.png) :
+
+```python
+from PIL import Image, ImageDraw, ImageFont
+
+# Créer une image 150x150 avec fond transparent
+img = Image.new('RGBA', (150, 150), (0, 0, 0, 0))
+draw = ImageDraw.Draw(img)
+
+# Dessiner un robot simple
+draw.ellipse((40, 20, 110, 50), fill=(50, 150, 250, 255))  # Tête
+draw.rectangle((50, 60, 100, 120), fill=(50, 150, 250, 255))  # Corps
+
+# Yeux
+draw.ellipse((60, 30, 75, 40), fill='white')
+draw.ellipse((85, 30, 100, 40), fill='white')
+draw.ellipse((65, 32, 70, 37), fill='black')
+draw.ellipse((90, 32, 95, 37), fill='black')
+
+# Bouche (sourire)
+draw.arc((65, 45, 95, 55), 0, 180, fill='black', width=2)
+
+#Bras
+draw.rectangle((20, 70, 50, 80), fill=(50, 150, 250, 255))
+draw.rectangle((100, 70, 130, 80), fill=(50, 150, 250, 255))
+
+img.save('assets/radi.png')
+print("Image générée dans assets/radi.png")
+```
+
+Pour utiliser ce script :
+   1. Installe Pillow : pip install Pillow
+   2. Copie le code ci-dessus dans un fichier 'generate_radi.py'
+   3. Exécute-le : python generate_radi.py
+
+--------------------------------------------------------------------------------
+                          RESSOURCES EN LIGNE
+--------------------------------------------------------------------------------
+
+🔗 Images libres de droits :
+   - https://pixabay.com/ (recherche "robot", "owl", etc.)
+   - https://www.flaticon.com/ (icônes)
+   - https://openclipart.org/ (cliparts libres)
+
+🔗 Générateurs de pixel art :
+   - https://www.piskelapp.com/
+   - https://pixilart.com/
+
+================================================================================
+                          BONNE CRÉATION ! 🎨
+================================================================================

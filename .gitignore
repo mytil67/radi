@@ -1,0 +1,90 @@
+# =============================================================================
+# RADI - Fichier .gitignore
+# =============================================================================
+
+# Environnement Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environnement virtuel
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs et données locales
+*.log
+data/radi_logs.json
+
+# Exécutables et fichiers temporaires
+*.exe
+*.dll
+*.pyd
+*.pyw
+
+# Fichiers de test (optionnel)
+tests/
+*.test.py
+
+# Fichiers de build PyInstaller
+build/
+*.spec
+
+# Cache
+.cache/
+
+# Ancien projet à exclure
+radi
+radi/
+rocky-companion/
+
+# =============================================================================
+# EXCEPTIONS (fichiers à versionner)
+# =============================================================================
+#
+# Les fichiers suivants DOIVENT être versionnés :
+# - radi.py
+# - install.bat
+# - uninstall.bat
+# - requirements.txt
+# - README.md
+# - data/conseils.json
+# - assets/radi_instructions.txt
+# - generate_radi.py
+#
+# Le fichier assets/radi.png peut être versionné ou non,
+# selon si vous voulez partager votre design.
+# =============================================================================

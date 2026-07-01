@@ -1,0 +1,27 @@
+# =============================================================================
+# RADI - Fichier des dépendances Python
+# =============================================================================
+
+# Interface graphique (obligatoire)
+PyQt6>=6.4.0
+
+# Pour générer des images (optionnel - seulement pour generate_radi.py)
+# Pillow>=9.0.0
+
+# Pour créer un exécutable .exe (optionnel)
+# pyinstaller>=5.0.0
+
+# =============================================================================
+# INSTALLATION
+# =============================================================================
+#
+# Pour installer toutes les dépendances :
+#   pip install -r requirements.txt
+#
+# Pour installer uniquement les dépendances obligatoires :
+#   pip install PyQt6
+#
+# Pour installer avec Pillow (pour générer des images) :
+#   pip install PyQt6 Pillow
+#
+# =============================================================================

@@ -1,0 +1,152 @@
+[
+    {
+        "id": 1,
+        "texte": "⚡ Pense à éteindre ton écran quand tu ne l'utilises pas pour économiser l'énergie !",
+        "categorie": "écologie",
+        "niveau": "primaire"
+    },
+    {
+        "id": 2,
+        "texte": "🔒 Protège tes mots de passe comme un trésor. Ne les partage jamais, même avec tes amis !",
+        "categorie": "sécurité",
+        "niveau": "collège"
+    },
+    {
+        "id": 3,
+        "texte": "📵 Fais des pauses régulières pour reposer tes yeux et bouger un peu ! (Règle 20-20-20 : toutes les 20 minutes, regarde à 20 pieds (6m) pendant 20 secondes).",
+        "categorie": "santé",
+        "niveau": "tous"
+    },
+    {
+        "id": 4,
+        "texte": "💡 Sur internet, tout ce que tu publies peut rester en ligne pour toujours. Réfléchis avant de partager !",
+        "categorie": "bonnes_pratiques",
+        "niveau": "collège"
+    },
+    {
+        "id": 5,
+        "texte": "🛡️ Méfie-toi des messages ou liens suspects, même s'ils semblent venir d'un ami. Cela peut être du phishing !",
+        "categorie": "sécurité",
+        "niveau": "tous"
+    },
+    {
+        "id": 6,
+        "texte": "📸 Avant de publier une photo de quelqu'un, demande-lui son accord ! C'est une question de respect et de droit à l'image.",
+        "categorie": "respect",
+        "niveau": "primaire"
+    },
+    {
+        "id": 7,
+        "texte": "🔑 Utilise des mots de passe différents pour chaque compte. Un gestionnaire de mots de passe peut t'aider à les retenir !",
+        "categorie": "sécurité",
+        "niveau": "collège"
+    },
+    {
+        "id": 8,
+        "texte": "🌙 Éteins tes écrans 1 heure avant de dormir pour mieux t'endormir. La lumière bleue perturbe le sommeil !",
+        "categorie": "santé",
+        "niveau": "tous"
+    },
+    {
+        "id": 9,
+        "texte": "🗑️ Supprime les fichiers inutiles et vide ta corbeille pour libérer de l'espace sur ton disque dur.",
+        "categorie": "écologie",
+        "niveau": "primaire"
+    },
+    {
+        "id": 10,
+        "texte": "🔍 Vérifie toujours l'URL d'un site avant de saisir tes identifiants. Cherche le cadenas 🔒 et le 'https://' !",
+        "categorie": "sécurité",
+        "niveau": "collège"
+    },
+    {
+        "id": 11,
+        "texte": "💾 Sauvegarde tes travaux importants sur une clé USB ou un disque dur externe. On n'est jamais à l'abri d'une panne !",
+        "categorie": "bonnes_pratiques",
+        "niveau": "tous"
+    },
+    {
+        "id": 12,
+        "texte": "🛑 Ne télécharge pas de logiciels crackés ou piratés : ils contiennent souvent des virus et c'est illégal !",
+        "categorie": "sécurité",
+        "niveau": "collège"
+    },
+    {
+        "id": 13,
+        "texte": "🗣️ Sur internet, soyez bienveillants. Un message peut blesser même s'il est écrit pour rire. Pense aux autres !",
+        "categorie": "respect",
+        "niveau": "primaire"
+    },
+    {
+        "id": 14,
+        "texte": "📧 Nettoie régulièrement ta boîte mail : saviez-vous qu'1 email = ~10g de CO2 par an ?",
+        "categorie": "écologie",
+        "niveau": "collège"
+    },
+    {
+        "id": 15,
+        "texte": "🔄 Active la double authentification (2FA) sur tes comptes importants (email, jeux en ligne). C'est une sécurité en plus !",
+        "categorie": "sécurité",
+        "niveau": "collège"
+    },
+    {
+        "id": 16,
+        "texte": "💪 Bouge ! Passe au moins 1 heure par jour sans écran pour ton corps et ton esprit.",
+        "categorie": "santé",
+        "niveau": "tous"
+    },
+    {
+        "id": 17,
+        "texte": "📱 Ne te connecte pas à un Wi-Fi public sans protection. Utilise un VPN si nécessaire !",
+        "categorie": "sécurité",
+        "niveau": "collège"
+    },
+    {
+        "id": 18,
+        "texte": "🚫 Le cyberharcèlement est interdit par la loi. Si tu en es victime ou témoin, parles-en à un adulte de confiance.",
+        "categorie": "respect",
+        "niveau": "tous"
+    },
+    {
+        "id": 19,
+        "texte": "🌍 Préfère le stockage local (clé USB, disque dur) au cloud quand c'est possible pour réduire ton empreinte numérique.",
+        "categorie": "écologie",
+        "niveau": "collège"
+    },
+    {
+        "id": 20,
+        "texte": "🎮 Après une session de jeu, fais une activité sans écran (lecture, sport, dessin) pour équilibrer ton temps.",
+        "categorie": "santé",
+        "niveau": "primaire"
+    },
+    {
+        "id": 21,
+        "texte": "🔗 Méfie-toi des raccourcisseurs d'URL (comme bit.ly). Ils peuvent cacher des liens malveillants !",
+        "categorie": "sécurité",
+        "niveau": "collège"
+    },
+    {
+        "id": 22,
+        "texte": "📖 Lis les conditions générales avant d'accepter sur un site. Oui, c'est long, mais c'est important !",
+        "categorie": "bonnes_pratiques",
+        "niveau": "collège"
+    },
+    {
+        "id": 23,
+        "texte": "👀 Fais attention à ta posture devant l'écran : dos droit, écran à hauteur des yeux, pieds à plat !",
+        "categorie": "santé",
+        "niveau": "tous"
+    },
+    {
+        "id": 24,
+        "texte": "💻 Nettoie régulièrement ton ordinateur (poussière, ventilation) pour qu'il dure plus longtemps.",
+        "categorie": "écologie",
+        "niveau": "tous"
+    },
+    {
+        "id": 25,
+        "texte": "🎨 Si tu utilises des images ou musiques pour un projet, vérifie qu'elles sont libres de droits (Creative Commons).",
+        "categorie": "bonnes_pratiques",
+        "niveau": "collège"
+    }
+]
