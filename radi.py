@@ -282,8 +282,8 @@ class RadiWindow(QWidget):
         screen = QApplication.primaryScreen().geometry()
         self.move(screen.width() - self.width() - 20, screen.height() - self.height() - 20)
 
-    def show_conseil(self, texte: str, duration: int = 8000):
-        """Affiche un conseil avec animation améliorée (fondu)."""
+    def show_conseil(self, texte: str, duration: int = 15000):
+        """Affiche un conseil avec animation améliorée (fondu)."
         self.conseil_label.setText(texte)
 
         # Positionner la fenêtre à sa position finale
