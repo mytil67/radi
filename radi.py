@@ -220,15 +220,15 @@ class RadiWindow(QWidget):
             pixmap = QPixmap(str(image_path))
             if not pixmap.isNull():
                 self.image_label.setPixmap(pixmap.scaled(150, 150, Qt.AspectRatioMode.KeepAspectRatio))
-                print("✅ Image chargée depuis : assets/radi.png")
+                print("[OK] Image chargee depuis : assets/radi.png")
             else:
-                self.image_label.setText("🤖")
+                self.image_label.setText("ROBOT")
                 self.image_label.setFont(QFont("Segoe UI Emoji", 60))
-                print("⚠️  assets/radi.png existe mais ne peut pas être chargé comme image")
+                print("[WARNING] assets/radi.png existe mais ne peut pas etre charge comme image")
         else:
-            self.image_label.setText("🤖")
+            self.image_label.setText("ROBOT")
             self.image_label.setFont(QFont("Segoe UI Emoji", 60))
-            print("⚠️  assets/radi.png introuvable. Utilisation de l'emoji 🤖")
+            print("[WARNING] assets/radi.png introuvable. Utilisation de l'emoji ROBOT")
 
         self.layout.addWidget(self.image_label)
 
@@ -269,7 +269,7 @@ class RadiWindow(QWidget):
         self.move_to_corner()
 
     def set_ombre_effet(self):
-        """Ajoute un effet d'ombre moderne à la fenêtre."""
+        # Ajoute un effet d ombre moderne a la fenetre
         shadow = QGraphicsDropShadowEffect(self)
         shadow.setBlurRadius(12)  # Flou réduit pour éviter les bugs Windows
         shadow.setXOffset(0)       # Décalage horizontal
@@ -278,12 +278,12 @@ class RadiWindow(QWidget):
         self.setGraphicsEffect(shadow)
 
     def move_to_corner(self):
-        """Positionne la fenêtre en bas à droite de l'écran."""
+        # Positionne la fenetre en bas a droite de l ecran
         screen = QApplication.primaryScreen().geometry()
         self.move(screen.width() - self.width() - 20, screen.height() - self.height() - 20)
 
     def show_conseil(self, texte: str, duration: int = 15000):
-        """Affiche un conseil avec animation améliorée (fondu)."
+        # Affiche un conseil avec animation amelioree (fondu)"
         self.conseil_label.setText(texte)
 
         # Positionner la fenêtre à sa position finale
@@ -302,21 +302,21 @@ class RadiWindow(QWidget):
         self.close_timer.start(duration)
 
     def mousePressEvent(self, event):
-        """Début du déplacement par glisser-déposer."""
+        # Debut du deplacement par glisser-deposer
         if event.button() == Qt.MouseButton.LeftButton:
             self.old_pos = event.globalPosition().toPoint()
             self.dragging = True
             # On n'a pas besoin de hide() ici, on va déplacer
 
     def mouseMoveEvent(self, event):
-        """Déplacement de la fenêtre."""
+        # Deplacement de la fenetre
         if self.dragging and self.old_pos:
             delta = event.globalPosition().toPoint() - self.old_pos
             self.move(self.pos() + delta)
             self.old_pos = event.globalPosition().toPoint()
 
     def mouseReleaseEvent(self, event):
-        """Fin du déplacement."""
+        # Fin du deplacement
         if event.button() == Qt.MouseButton.LeftButton:
             self.dragging = False
             self.old_pos = None
@@ -331,7 +331,7 @@ class RadiWindow(QWidget):
 
 
 class RadiApp:
-    """Application principale de RADI."""
+    # Application principale de RADI
 
     def __init__(self):
         self.app = QApplication(sys.argv)
@@ -342,6 +342,7 @@ class RadiApp:
         # Vérifier/créer les dossiers nécessaires
         ASSETS_DIR.mkdir(exist_ok=True)
         DATA_DIR.mkdir(exist_ok=True)
+        print("[LAUNCH] RADI v2.0 (Clippy 2.0) demarre...")
         
         # Initialiser le son (optionnel)
         self.sound_effect = None
@@ -355,7 +356,7 @@ class RadiApp:
         icon_path = ASSETS_DIR / "radi.png"
         if icon_path.exists():
             self.tray_icon.setIcon(QIcon(str(icon_path)))
-            print("✅ Icône chargée depuis : assets/radi.png")
+            print("[OK] Icone chargee depuis : assets/radi.png")
         else:
             # Utiliser une icône système par défaut (computer, folder, etc.)
             try:
@@ -364,16 +365,16 @@ class RadiApp:
                     icon = QIcon.fromTheme(theme_icon)
                     if not icon.isNull():
                         self.tray_icon.setIcon(icon)
-                        print(f"⚠️  assets/radi.png introuvable. Utilisation de l'icône système : {theme_icon}")
+                        print(f"[WARNING] assets/radi.png introuvable. Utilisation de l'icone systeme : {theme_icon}")
                         break
                 else:
                     # Si aucune icône thème ne fonctionne, créer une icône vide (affichera l'icône par défaut de QSystemTrayIcon)
                     self.tray_icon.setIcon(QIcon())
-                    print("⚠️  assets/radi.png introuvable. Aucune icône système trouvée.")
+                    print("[WARNING] assets/radi.png introuvable. Aucune icone systeme trouvee.")
             except Exception as e:
-                print(f"⚠️  Erreur avec les icônes système : {e}")
+                print(f"[WARNING] Erreur avec les icones systeme : {e}")
                 self.tray_icon.setIcon(QIcon())
-            print("💡 Pour résoudre : exécute 'python generate_radi.py' pour créer radi.png")
+            print("[INFO] Pour resoudre : execute 'python generate_radi.py' pour creer radi.png")
 
         # Menu du tray
         tray_menu = QMenu()
@@ -408,30 +409,30 @@ class RadiApp:
         self.timer.start(300000)
 
     def init_sound(self):
-        """Initialise le son d'apparition."""
+        # Initialise le son d'apparition
         sound_path = ASSETS_DIR / "pop.wav"
         if sound_path.exists():
             self.sound_effect = QSoundEffect()
             self.sound_effect.setSource(QUrl.fromLocalFile(str(sound_path)))
-            self.sound_effect.setVolume(0.5)  # Volume à 50%
-            print("🔊 Son chargé depuis : assets/pop.wav")
+            self.sound_effect.setVolume(0.5)  # Volume a 50%
+            print("[SON] Son charge depuis : assets/pop.wav")
         else:
-            print("💡 Pour activer le son : place un fichier 'pop.wav' dans assets/")
+            print("[INFO] Pour activer le son : place un fichier 'pop.wav' dans assets/")
 
     def play_sound(self):
-        """Joue le son d'apparition."""
+        # Joue le son d'apparition
         if self.sound_effect and self.son_active:
             self.sound_effect.play()
 
     def toggle_son(self, state):
-        """Active/désactive le son."""
+        # Active/desactive le son
         self.son_active = state
-        action = self.tray_icon.contextMenu().actions()[2]  # 3ème action = son
-        action.setText("Son activé" if state else "Son désactivé")
-        print(f"🔊 Son {'activé' if state else 'désactivé'}")
+        action = self.tray_icon.contextMenu().actions()[2]  # 3eme action = son
+        action.setText("Son active" if state else "Son desactive")
+        print(f"[SON] Son {'active' if state else 'desactive'}")
 
     def show_random_conseil(self):
-        """Affiche un conseil aléatoire."""
+        # Affiche un conseil aleatoire
         conseils = charger_conseils()
 
         # Essayer de prendre un conseil non vu récemment
@@ -450,22 +451,22 @@ class RadiApp:
             log_conseil(conseil["id"])
 
     def quit(self):
-        """Quitte l'application."""
+        # Quitte l'application
         self.app.quit()
 
     def run(self):
-        """Lance l'application."""
+        # Lance l'application
         print("=" * 60)
-        print("🚀 RADI v2.0 (Clippy 2.0) est lancé !")
+        print("[LAUNCH] RADI v2.0 (Clippy 2.0) est lance !")
         print("=" * 60)
-        print("✨Nouveautés :")
-        print("  • Animation fluide avec effet rebond")
-        print("  • Style moderne avec ombres")
-        print("  • Fenêtre déplaçable (glisser-déposer)")
-        print("  • Menu étendu (clic droit sur l'icône)")
+        print("[NEW] Nouveautes :")
+        print("  * Animation fluide avec effet rebond")
+        print("  * Style moderne avec ombres")
+        print("  * Fenetre deplacable (glisser-deposer)")
+        print("  * Menu etendu (clic droit sur l'icone)")
         print("=" * 60)
-        print("💡 Attends 3 secondes pour le premier conseil...")
-        print("📍 Astuce : Clic droit sur l'icône → 'Son activé/désactivé'")
+        print("[INFO] Attends 3 secondes pour le premier conseil...")
+        print("[INFO] Astuce : Clic droit sur l'icone -> 'Son active/desactive'")
         print("=" * 60)
         # Afficher un conseil au démarrage (après 3 secondes)
         QTimer.singleShot(3000, self.show_random_conseil)

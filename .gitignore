@@ -10,7 +10,6 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -49,8 +48,7 @@ Thumbs.db
 *.log
 data/radi_logs.json
 
-# Exécutables et fichiers temporaires
-*.exe
+# Fichiers temporaires
 *.dll
 *.pyd
 *.pyw
