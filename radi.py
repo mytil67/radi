@@ -38,10 +38,24 @@ from PyQt6.QtMultimedia import QSoundEffect
 # CONSTANTES
 # =============================================================================
 
+def get_assets_dir():
+    """Retourne le chemin du dossier assets, compatible avec PyInstaller."""
+    # Si on est dans un executable PyInstaller
+    if getattr(sys, 'frozen', False):
+        # Le chemin est dans _MEIPASS
+        return Path(sys._MEIPASS) / "assets"
+    else:
+        # Mode normal : dossier assets a cote du script
+        return Path(__file__).parent / "assets"
+
 # Chemin de la racine du projet (dossier parent de ce fichier)
 BASE_DIR = Path(__file__).parent
-ASSETS_DIR = BASE_DIR / "assets"
-DATA_DIR = BASE_DIR / "data"
+ASSETS_DIR = get_assets_dir()
+# Pour les donnees, utiliser un chemin dans le dossier de l'utilisateur si on est en mode frozen
+if getattr(sys, 'frozen', False):
+    DATA_DIR = Path(sys._MEIPASS).parent / "data"
+else:
+    DATA_DIR = BASE_DIR / "data"
 
 # Fichiers
 CONSEILS_FILE = DATA_DIR / "conseils.json"
