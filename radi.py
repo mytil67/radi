@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 """
 RADI - Robot d'Accompagnement à la Découverte Informatique
-Compagnon numérique éducatif pour les écoles - Version 2.0 (Clippy 2.0)
+Compagnon numérique éducatif pour les écoles - Version 2.1 (Clippy 2.0 - Edition Strasbourg)
 
 Améliorations :
 - Animations fluides (glisse + rebond)
 - Style moderne avec ombres et bordures arrondies
 - Fenêtre déplaçable (glisser-déposer)
 - Son d'apparition (optionnel)
+- Theme Strasbourg avec degrade vert officiel (#94BA0C) et logo discret
 
 Auteur: [Ton Nom / Établissement]
 Licence: Libre pour usage éducatif non commercial.
@@ -241,7 +242,9 @@ class RadiWindow(QWidget):
             """
             QLabel {
                 color: #FFFFFF;
-                background: rgba(40, 40, 60, 220);
+                background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                    stop:0 rgba(148, 186, 12, 220), 
+                    stop:1 rgba(122, 156, 0, 220));
                 padding: 16px 12px 16px 12px;
                 border-radius: 14px;
                 margin: 8px;
@@ -250,6 +253,22 @@ class RadiWindow(QWidget):
             """
         )
         self.layout.addWidget(self.conseil_label)
+
+        # Logo Strasbourg (discret dans le coin superieur droit)
+        self.logo_label = QLabel()
+        self.logo_label.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTop)
+        logo_path = assets_dir / "strasbourg.png"
+        if logo_path.exists():
+            logo_pixmap = QPixmap(str(logo_path))
+            if not logo_pixmap.isNull():
+                self.logo_label.setPixmap(logo_pixmap.scaled(40, 40, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
+                self.logo_label.setStyleSheet("margin-top: -10px; margin-right: 10px;")
+                self.layout.addWidget(self.logo_label)
+                print("[OK] Logo Strasbourg charge depuis : assets/strasbourg.png")
+            else:
+                print("[WARNING] assets/strasbourg.png existe mais ne peut pas etre charge")
+        else:
+            print("[INFO] Logo Strasbourg non trouve - utilisation sans logo")
 
         # Animations
         self.animation = QPropertyAnimation(self, b"geometry")
@@ -337,7 +356,7 @@ class RadiApp:
         self.app = QApplication(sys.argv)
         self.app.setQuitOnLastWindowClosed(False)
         self.app.setApplicationName("RADI")
-        self.app.setApplicationVersion("2.0.0")
+        self.app.setApplicationVersion("2.1.0")
 
         # Vérifier/créer les dossiers nécessaires
         ASSETS_DIR.mkdir(exist_ok=True)
@@ -457,13 +476,14 @@ class RadiApp:
     def run(self):
         # Lance l'application
         print("=" * 60)
-        print("[LAUNCH] RADI v2.0 (Clippy 2.0) est lance !")
+        print("[LAUNCH] RADI v2.1 (Clippy 2.0 - Edition Strasbourg) est lance !")
         print("=" * 60)
         print("[NEW] Nouveautes :")
         print("  * Animation fluide avec effet rebond")
         print("  * Style moderne avec ombres")
         print("  * Fenetre deplacable (glisser-deposer)")
         print("  * Menu etendu (clic droit sur l'icone)")
+        print("  * Theme Strasbourg (degrade vert + logo)")
         print("=" * 60)
         print("[INFO] Attends 3 secondes pour le premier conseil...")
         print("[INFO] Astuce : Clic droit sur l'icone -> 'Son active/desactive'")
